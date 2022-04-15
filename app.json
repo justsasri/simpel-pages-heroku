@@ -6,56 +6,7 @@
   "logo": "https://www.simpellab.com/static/brandlogo/simpel_pages_logo.svg",
   "keywords": ["blog", "cms", "python", "django", "website"],
   "success_url": "/",
-  "env": {
-    "SITE_NAME": {
-      "description": "Your site name",
-      "value": "My Simpel Pages"
-    },
-    "SECRET_KEY": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
-      "generator": "secret"
-    },
-    "DJANGO_SETTINGS_MODULE": {
-      "description": "Django settings module 'dev' or 'production'.",
-      "value": "server.settings.production"
-    },
-    "DEPLOYMENT_ENV": {
-      "description": "Deployment environtment 'heroku' or 'docker'.",
-      "value": "heroku"
-    },
-    "BASE_URL": {
-      "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
-      "value": "https://CHANGE.herokuapp.com"
-    },
-    "PAGE_CACHE_TIMEOUT": {
-      "description": "Page cache timeout.",
-      "value": 360
-    },
-    "SENTRY_DSN": {
-      "description": "Sentry DSN for debugging.",
-      "value": "",
-      "required": false
-    },
-    "STORAGE_TYPE": {
-      "description": "Static file storage 'locale', 'whitenoise' or 'cloudinary'.",
-      "value": "whitenoise"
-    },
-    "CLOUDINARY_API_KEY": {
-      "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
-      "value": "",
-      "required": false
-    },
-    "CLOUDINARY_API_SECRET": {
-      "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
-      "value": "",
-      "required": false
-    },
-    "CLOUDINARY_CLOUD_NAME": {
-      "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
-      "value": "",
-      "required": false
-    }
-  },
+
   "formation": {
     "web": {
       "quantity": 1,
