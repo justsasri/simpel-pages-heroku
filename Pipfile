@@ -1,0 +1,36 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "<4.0,>=3.2.8"
+simpel-pages = "*"
+simpel-discuss = "*"
+django-social-share = "*"
+dj-database-url = "*"
+django-heroku = "*"
+whitenoise = "*"
+sentry-sdk = "*"
+django-redis = "*"
+django-cleanup = "*"
+django-minifier = "*"
+cloudinary = "*"
+django-cloudinary-storage = "*"
+django-storages = {extras = ["dropbox"], version = "*"}
+django-environ = "*"
+django-tinymce = "*"
+
+[dev-packages]
+coverage = "*"
+flake8 = "*"
+flake8-debugger = "*"
+black = "*"
+isort = "*"
+ipython = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
