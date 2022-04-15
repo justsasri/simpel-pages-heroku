@@ -33,7 +33,8 @@
     },
     "SENTRY_DSN": {
       "description": "Sentry DSN for debugging.",
-      "value": ""
+      "value": "",
+      "required": "false"
     },
     "STORAGE_TYPE": {
       "description": "Static file storage 'locale', 'whitenoise' or 'cloudinary'.",
@@ -41,15 +42,18 @@
     },
     "CLOUDINARY_API_KEY": {
       "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
-      "value": ""
+      "value": "",
+      "required": "false"
     },
     "CLOUDINARY_API_SECRET": {
       "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
-      "value": ""
+      "value": "",
+      "required": "false"
     },
     "CLOUDINARY_CLOUD_NAME": {
       "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
-      "value": ""
+      "value": "",
+      "required": "false"
     }
   },
   "formation": {
