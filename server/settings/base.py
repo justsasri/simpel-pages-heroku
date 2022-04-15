@@ -1,7 +1,8 @@
 import os
+
+import environ
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-import environ
 
 env = environ.Env(
     # set casting, default value
@@ -24,7 +25,6 @@ PAGE_CACHE_TIMEOUT = env("PAGE_CACHE_TIMEOUT", int, default=0)
 
 INSTALLED_APPS = [
     "haystack",
-    "apps.core",
     "apps.auth",
     "simpel_pages",
     "simpel_themes",
