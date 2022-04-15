@@ -1,4 +1,5 @@
 import os
+from urllib.parse import urlparse
 
 import environ
 import sentry_sdk
@@ -32,6 +33,7 @@ INSTALLED_APPS = [
     "mptt",
     "filer",
     "tinymce",
+    "django_rq",
     "polymorphic",
     "easy_thumbnails",
     "django.contrib.admin",
@@ -140,11 +142,52 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+######################################################
+# SESSION & CACHE
+######################################################
+
+REDIS_URL = env("REDIS_URL", str, "redis://:habibie099secret@127.0.0.1:6379/0")
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 60 * 15  # Logout if inactive for 15 minutes
+SESSION_SAVE_EVERY_REQUEST = True
+
+if REDIS_URL:
+    SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
+    SESSION_CACHE_ALIAS = "default"
+    CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": REDIS_URL,
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            },
+        },
+    }
+######################################################
+# QUEUES
+######################################################
+
+REDIS_SSL = env("REDIS_SSL", bool, False)
+RQ_DATABASE = 1
+RQ_URL = urlparse(REDIS_URL)
+
+RQ_QUEUES = {
+    "default": {
+        "HOST": RQ_URL.hostname,
+        "USERNAME": RQ_URL.username,
+        "PASSWORD": RQ_URL.password,
+        "PORT": RQ_URL.port,
+        "DB": RQ_DATABASE,
+        "SSL": bool(REDIS_SSL),
+        "SSL_CERT_REQS": None,
+    },
+}
+
 # -----------------------------------------------------------------
 # INTERNATIONALIZATION
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 # -----------------------------------------------------------------
-
 
 TIME_ZONE = "UTC"
 USE_I18N = True

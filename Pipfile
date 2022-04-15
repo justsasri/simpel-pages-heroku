@@ -20,6 +20,7 @@ django-cloudinary-storage = "*"
 django-storages = {extras = ["dropbox"], version = "*"}
 django-environ = "*"
 django-tinymce = "*"
+django-rq = "*"
 
 [dev-packages]
 coverage = "*"
