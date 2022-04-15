@@ -29,7 +29,7 @@
     },
     "PAGE_CACHE_TIMEOUT": {
       "description": "Page cache timeout.",
-      "value": 360
+      "value": "360"
     },
     "SENTRY_DSN": {
       "description": "Sentry DSN for debugging.",
