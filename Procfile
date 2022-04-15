@@ -1,3 +1,3 @@
 release: bash ./release.sh
-web: gunicorn example.wsgi
+web: gunicorn server.wsgi
 worker: python manage.py rqworker default
