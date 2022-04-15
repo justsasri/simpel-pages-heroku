@@ -1,5 +1,6 @@
-import django_heroku
 import dj_database_url
+import django_heroku
+
 from .base import *  # NOQA
 from .base import env
 
@@ -30,9 +31,13 @@ if STORAGE_TYPE == "cloudinary":
         "API_SECRET": CLOUDINARY_API_SECRET,
     }
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+elif STORAGE_TYPE == "whitenoise":
+    MIDDLEWARE += [  # NOQA
+        "whitenoise.middleware.WhiteNoiseMiddleware",
+    ]
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DATABASES["default"] = dj_database_url.config(conn_max_age=600)  # NOQA
-
 
 DEPLOYMENT_ENV = env("DEPLOYMENT_ENV", str, default="docker")
 

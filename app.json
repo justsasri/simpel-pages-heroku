@@ -7,6 +7,10 @@
   "keywords": ["blog", "cms", "python", "django", "website"],
   "success_url": "/",
   "env": {
+    "SITE_NAME": {
+      "description": "Your site name",
+      "value": "My Simpel Pages"
+    },
     "SECRET_KEY": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
@@ -15,9 +19,21 @@
       "description": "Django settings module 'dev' or 'production'.",
       "value": "server.settings.production"
     },
+    "DEPLOYMENT_ENV": {
+      "description": "Deployment environtment 'heroku' or 'docker'.",
+      "value": "heroku"
+    },
     "BASE_URL": {
       "description": "Public root URL of the Chatwoot installation. This will be used in the emails.",
       "value": "https://CHANGE.herokuapp.com"
+    },
+    "PAGE_CACHE_TIMEOUT": {
+      "description": "Page cache timeout.",
+      "value": 360
+    },
+    "SENTRY_DSN": {
+      "description": "Sentry DSN for debugging.",
+      "value": ""
     },
     "STORAGE_TYPE": {
       "description": "Static file storage 'locale', 'whitenoise' or 'cloudinary'.",

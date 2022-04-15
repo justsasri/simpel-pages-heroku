@@ -213,35 +213,13 @@ if SENTRY_DSN:
         send_default_pii=True,
     )
 
-
 FAVICON_URL = "/favicon.ico"
-SOCIAL_ICONS = [
-    {
-        "name": "help",
-        "icon": "lifebuoy",
-        "classname": "link-danger",
-        "url": "/help/",
-    },
-    {
-        "name": "facebook",
-        "icon": "facebook",
-        "classname": "link-facebook",
-        "url": "https://www.facebook.com/sasri",
-    },
-    {
-        "name": "twitter",
-        "icon": "twitter",
-        "classname": "link-info",
-        "url": "https://www.twitter.com/sasri",
-    },
-]
 
 SETTINGS_EXPORT = [
     "PAGE_CACHE_TIMEOUT",
     "BASE_URL",
     "SITE_NAME",
     "FAVICON_URL",
-    "SOCIAL_ICONS",
 ]
 
 SETTINGS_EXPORT_VARIABLE_NAME = "django_settings"
