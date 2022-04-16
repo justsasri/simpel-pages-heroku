@@ -21,6 +21,7 @@ django-storages = {extras = ["dropbox"], version = "*"}
 django-environ = "*"
 django-tinymce = "*"
 django-rq = "*"
+gunicorn = "*"
 
 [dev-packages]
 coverage = "*"
